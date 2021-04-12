@@ -7,11 +7,15 @@ namespace :db do
     Sequel.extension :migration
 
     Sequel.connect(Settings.db.to_hash) do |db|
+      db.extension :schema_dumper
+
       migrations = File.expand_path('../../db/migrations', __dir__)
       version = args.version.to_i if args.version
 
       Sequel::Migrator.run(db, migrations, target: version)
-    end
 
+      schema = db.dump_schema_migration
+      File.open("db/schema.rb", 'w') {|f| f.write(schema) }
+    end
   end
 end
