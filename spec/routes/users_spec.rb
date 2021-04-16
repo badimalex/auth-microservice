@@ -6,7 +6,7 @@ RSpec.describe UserRoutes, type: :routes do
       end
 
       it 'returns an error' do
-        post '/v1', user: user_params
+        post '/', user: user_params
 
         expect(last_response.status).to eq(422)
       end
@@ -18,7 +18,7 @@ RSpec.describe UserRoutes, type: :routes do
       end
 
       it 'returns an error' do
-        post '/v1', user: user_params
+        post '/', user: user_params
 
         expect(last_response.status).to eq(422)
         expect(response_body['errors']).to include(
@@ -42,7 +42,7 @@ RSpec.describe UserRoutes, type: :routes do
       end
 
       it 'returns created status' do
-        post '/v1', user: user_params
+        post '/', user: user_params
 
         expect(last_response.status).to eq(201)
       end
