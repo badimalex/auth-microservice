@@ -1,13 +1,7 @@
 require_relative 'config/environment'
 
-map '/users' do
-  run UserRoutes
-end
-
-map '/sessions' do
-  run SessionsRoutes
-end
-
-map '/auth' do
-  run AuthRoutes
-end
+run Rack::URLMap.new(
+  '/v1/signup' => UserRoutes,
+  '/v1/login' => SessionsRoutes,
+  '/v1/auth' => AuthRoutes,
+)
