@@ -14,6 +14,7 @@ gem "activesupport", "~> 6.1"
 gem "fast_jsonapi", "~> 1.5"
 gem 'sequel_secure_password'
 gem 'jwt', '~> 2.2.1'
+gem "bunny", "~> 2.15.0"
 
 group :test do
   gem 'factory_bot'
