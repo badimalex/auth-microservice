@@ -15,6 +15,8 @@ gem "fast_jsonapi", "~> 1.5"
 gem 'sequel_secure_password'
 gem 'jwt', '~> 2.2.1'
 gem "bunny", "~> 2.15.0"
+gem "rack-ougai", "~> 0.2.1"
+gem "rack-request-id", "~> 0.0.4"
 
 group :test do
   gem 'factory_bot'
@@ -22,3 +24,5 @@ group :test do
   gem 'rspec'
   gem 'database_cleaner-sequel'
 end
+
+gem "amazing_print", "~> 1.3"
