@@ -12,3 +12,8 @@ logger:
   level: info
 secrets:
   secret_key_base: 5bb191cfedad2188d5cc099aad4d48cff6754f6a9b07d8f6587d9cb9e5c034c1e098ee6196db6a6f8913c3f1ec0f0eceaac9c6b15274d7cd3ead4997c27edcba
+rabbitmq:
+  host: <%= ENV['RABBITMQ_HOST'] %>
+  username: <%= ENV['RABBITMQ_USER'] %>
+  password: <%= ENV['RABBITMQ_PASSWORD'] %>
+  consumer_pool: 10
