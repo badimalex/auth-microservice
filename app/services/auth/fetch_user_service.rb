@@ -15,7 +15,7 @@ module Auth
 
     # @todo
     def session
-      @session ||= UserSession.fetch("SELECT * FROM user_sessions WHERE uuid::text = ? LIMIT 1", @uuid).first rescue nil
+      @session ||= UserSession.fetch("SELECT * FROM user_sessions WHERE uuid::text = ? LIMIT 1", @uuid.to_s).first
     end
   end
 end
